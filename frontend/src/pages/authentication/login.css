@@ -1,0 +1,20 @@
+.loginContainer{
+    width: 30%;
+    border: 2px solid blue;
+    border-radius: 15px;
+    padding: 0 50px;
+    margin: 20px;
+    text-align: center;
+}
+.login {
+    text-decoration: underline;
+    color: blue;
+}
+
+@media screen and (max-width: 640px) {
+    .loginContainer{
+        width: 70%;
+        padding: 0 20px;
+    }
+   
+  }

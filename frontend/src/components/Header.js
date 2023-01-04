@@ -1,7 +1,15 @@
 import { Container, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+  const navigate = useNavigate();
+  
+  const clickHandler = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("userInfo");
+    navigate("/");
+  };
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -23,7 +31,9 @@ const Header = () => {
             <Nav.Link href="/mynotes">My Notes</Nav.Link>
             <NavDropdown title="Praneth kumar" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Log Out</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2" onClick={clickHandler}>
+                Log Out
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
